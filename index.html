@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #compass {
+            font-size: 2em;
+        }
+        #arrow {
+            font-size: 5em;
+            transform: rotate(0deg);
+            transition: transform 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Compass</h1>
+    <div id="compass">Direction: 0°</div>
+    <div id="arrow">⬆️</div>
+
+    <script>
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', function(event) {
+                let alpha = event.alpha;
+                document.getElementById('compass').textContent = `Direction: ${Math.round(alpha)}°`;
+                document.getElementById('arrow').style.transform = `rotate(${alpha}deg)`;
+            });
+        } else {
+            document.getElementById('compass').textContent = 'Device Orientation not supported';
+        }
+    </script>
+</body>
+</html>

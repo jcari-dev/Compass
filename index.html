@@ -18,12 +18,28 @@
             transform: rotate(0deg);
             transition: transform 0.2s;
         }
+        #explanation {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #555;
+        }
+        #docs-link {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
-    <h1>Compass</h1>
+    <h1>Phone Compass (Sort of, but not really)</h1>
     <div id="compass">Direction: 0°</div>
     <div id="arrow">⬆️</div>
+    <div id="explanation">
+        This isn't a real compass, it's just showing the direction your phone is facing using your device's orientation sensors. 
+        The direction is based on how your phone rotates relative to the Earth's magnetic field (or so they say) 👀.
+    </div>
+    <div id="docs-link">
+        Want to learn more? Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent" target="_blank">Mozilla documentation on DeviceOrientationEvent</a>.
+    </div>
 
     <script>
         if (window.DeviceOrientationEvent) {

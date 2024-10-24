@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compass</title>
+    <title>Phone Compass</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,12 +30,18 @@
     </style>
 </head>
 <body>
-    <h1>Phone Compass (Sort of, but not really)</h1>
+    <h1>Phone Compass</h1>
     <div id="compass">Direction: 0°</div>
     <div id="arrow">⬆️</div>
     <div id="explanation">
-        This isn't a real compass, it's just showing the direction your phone is facing using your device's orientation sensors. 
-        The direction is based on how your phone rotates relative to the Earth's magnetic field (or so they say) 👀.
+        This compass uses your device's orientation sensors to display the direction your phone is facing (alpha value). 
+        <br><br>
+        <strong>Note:</strong> The direction is based on the device's rotation around its z-axis (horizontal rotation). 
+        0° indicates the top of the phone is facing north, and as you rotate counterclockwise, the degree value increases.
+        <br><br>
+        <em>Browser differences:</em> Not all browsers report the same values due to differences in how they interpret device orientation.
+        <br><br>
+        <strong>Disclaimer for iOS users:</strong> This may not work on iOS devices because Apple requires special permissions for accessing device orientation data.
     </div>
     <div id="docs-link">
         Want to learn more? Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/API/DeviceOrientationEvent" target="_blank">Mozilla documentation on DeviceOrientationEvent</a> or <a href="https://web.dev/articles/device-orientation" target="_blank">this article on web.dev</a>.
